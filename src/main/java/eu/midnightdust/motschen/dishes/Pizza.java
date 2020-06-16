@@ -2,6 +2,7 @@ package eu.midnightdust.motschen.dishes;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.entity.EntityContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.sound.BlockSoundGroup;
@@ -28,7 +29,7 @@ public class Pizza extends HorizontalFacingBlock {
     private static final VoxelShape WEST_SHAPE;
 
     public Pizza() {
-        super(FabricBlockSettings.copy(Blocks.CAKE).nonOpaque().sounds(BlockSoundGroup.STONE));
+        super(FabricBlockSettings.copyOf(Blocks.CAKE).nonOpaque().sounds(BlockSoundGroup.STONE));
         this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(BITES, 0));
     }
 
@@ -77,7 +78,7 @@ public class Pizza extends HorizontalFacingBlock {
         builder.add(BITES);
     }
     @Override
-    public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
+    public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, EntityContext context) {
         switch (state.get(FACING)) {
             case NORTH: return NORTH_SHAPE;
             case EAST: return EAST_SHAPE;

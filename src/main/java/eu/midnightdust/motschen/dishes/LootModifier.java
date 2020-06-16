@@ -12,19 +12,19 @@ public class LootModifier {
         LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, supplier, setter) -> {
             if (id.getPath().contains("chests") && id.getPath().contains("village")) {
                 FabricLootPoolBuilder tomato = FabricLootPoolBuilder.builder()
-                        .rolls(UniformLootTableRange.between(0, 5))
+                        .withRolls(UniformLootTableRange.between(0, 5))
                         .withCondition(RandomChanceLootCondition.builder(1.0f).build())
-                        .with(ItemEntry.builder(DishesMain.Tomato));
-                supplier.pool(tomato);
+                        .withEntry(ItemEntry.builder(DishesMain.Tomato));
+                supplier.withPool(tomato);
             }
         });
         LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, supplier, setter) -> {
             if (id.getPath().contains("chests") && id.getPath().contains("village")) {
                 FabricLootPoolBuilder lettuce = FabricLootPoolBuilder.builder()
-                        .rolls(UniformLootTableRange.between(0, 5))
+                        .withRolls(UniformLootTableRange.between(0, 5))
                         .withCondition(RandomChanceLootCondition.builder(1.0f).build())
-                        .with(ItemEntry.builder(DishesMain.Lettuce));
-                supplier.pool(lettuce);
+                        .withEntry(ItemEntry.builder(DishesMain.Lettuce));
+                supplier.withPool(lettuce);
             }
         });
     }
