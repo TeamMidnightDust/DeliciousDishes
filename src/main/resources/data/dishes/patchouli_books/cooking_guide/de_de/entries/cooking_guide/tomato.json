@@ -1,0 +1,18 @@
+{
+  "name": "Tomate",
+  "icon": "dishes:tomato",
+  "category": "dishes:general",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:tomato",
+      "title": "Tomate",
+      "link_recipe": false,
+      "text": "Eine Tomate ist eine rote Frucht, die für viele Rezepte verwendet wird. Sie ist in Dörfern zu finden."
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:tomatoseed"
+    }
+  ]
+}

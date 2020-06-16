@@ -1,0 +1,22 @@
+{
+  "name": "Salami",
+  "icon": "dishes:salami",
+  "category": "dishes:general",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:salami",
+      "title": "Salami",
+      "link_recipe": false,
+      "text": "Salami ist eine Art Wurst, die auch als Salzwurst bezeichnet wird. Man kann sie aus Schweine- und Rindfleisch herstellen."
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:salami_pig"
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:salami_cow"
+    }
+  ]
+}

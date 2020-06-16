@@ -1,0 +1,18 @@
+{
+  "name": "Spaghetti Bolognese",
+  "icon": "dishes:spaghetti_bolognese",
+  "category": "dishes:italian",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "dishes:spaghetti_bolognese",
+      "title": "Spaghetti Bolognese",
+      "link_recipe": false,
+      "text": "Wer liebt Spaghetti nicht?"
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:spaghetti_bolognese"
+    }
+  ]
+}

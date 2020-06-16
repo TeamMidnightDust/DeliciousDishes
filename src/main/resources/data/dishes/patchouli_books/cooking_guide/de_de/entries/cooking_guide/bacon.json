@@ -1,0 +1,18 @@
+{
+  "name": "Speck",
+  "icon": "dishes:bacon",
+  "category": "dishes:general",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:bacon",
+      "title": "Speck",
+      "link_recipe": false,
+      "text": "Speck kann man für die Herstellung von Pizza Bacon verwenden."
+    },
+	{
+      "type": "smelting",
+      "recipe": "dishes:bacon_smelting"
+    }
+  ]
+}
