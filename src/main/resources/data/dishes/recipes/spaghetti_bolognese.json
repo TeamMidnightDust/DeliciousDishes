@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "///",
+        "/G/",
+        "/_/"
+    ],
+    "key": {
+        "/": {
+            "item": "dishes:spaghetti"
+        },
+        "G": {
+            "item": "dishes:tomato"
+        },
+        "_": {
+            "item": "dishes:plate"
+        }
+    },
+    "result": {
+        "item": "dishes:spaghetti_bolognese",
+        "count": 1
+    }
+}

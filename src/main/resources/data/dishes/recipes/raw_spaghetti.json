@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "dishes:flour"
+        },
+		{
+            "item": "dishes:salt"
+        },
+        {
+            "item": "minecraft:egg"
+        }
+    ],
+    "result": {
+        "item": "dishes:raw_spaghetti",
+        "count": 1
+    }
+}

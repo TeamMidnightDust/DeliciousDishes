@@ -1,0 +1,6 @@
+{
+    "parent": "block/crop",
+    "textures": {
+        "crop": "dishes:block/tomato_stage1"
+    }
+}

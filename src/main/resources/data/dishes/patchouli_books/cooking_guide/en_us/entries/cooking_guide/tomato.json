@@ -1,0 +1,18 @@
+{
+  "name": "Tomato",
+  "icon": "dishes:tomato",
+  "category": "dishes:general",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:tomato",
+      "title": "Tomato",
+      "link_recipe": false,
+      "text": "A Tomato is a red fruit that is used for many recipes. It can be found in village chests and can be used to craft Tomato Seeds."
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:tomatoseed"
+    }
+  ]
+}

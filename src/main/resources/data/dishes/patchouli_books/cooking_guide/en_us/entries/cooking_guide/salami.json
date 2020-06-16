@@ -1,0 +1,22 @@
+{
+  "name": "Salami",
+  "icon": "dishes:salami",
+  "category": "dishes:general",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:salami",
+      "title": "Salami",
+      "link_recipe": false,
+      "text": "Salami is a type of meat, made out of Pig or Cow."
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:salami_pig"
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:salami_cow"
+    }
+  ]
+}

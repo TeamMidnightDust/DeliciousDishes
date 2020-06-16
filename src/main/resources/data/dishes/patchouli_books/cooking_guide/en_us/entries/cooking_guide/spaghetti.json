@@ -1,0 +1,18 @@
+{
+  "name": "Spaghetti",
+  "icon": "dishes:salt",
+  "category": "dishes:general",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:spaghetti",
+      "title": "Spaghetti",
+      "link_recipe": false,
+      "text": "Spaghetti are pasta and can be used to cook Spaghetti Bolognese."
+    },
+	{
+      "type": "smelting",
+      "recipe": "dishes:spaghetti_smelting"
+    }
+  ]
+}

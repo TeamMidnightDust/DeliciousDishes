@@ -1,0 +1,18 @@
+{
+  "name": "Raw Bacon",
+  "icon": "dishes:raw_bacon",
+  "category": "dishes:general",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:raw_bacon",
+      "title": "Raw Bacon",
+      "link_recipe": false,
+      "text": "Raw Bacon can be cooked in a furnace."
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:raw_bacon"
+    }
+  ]
+}

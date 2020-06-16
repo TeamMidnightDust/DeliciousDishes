@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "dishes:potato_slice"
+        },
+        {
+            "item": "dishes:salt"
+        }
+    ],
+    "result": {
+        "item": "dishes:raw_fries",
+        "count": 1
+    }
+}

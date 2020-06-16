@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "liltater:lil_tater",
+            "item_h": "liltater:lil_tater"
+        },
+		{
+            "item": "minecraft:milk_bucket",
+            "item_h": "minecraft:milk_bucket"
+        },
+        {
+            "item": "dishes:plate",
+            "item_h": "dishes:plate"
+        }
+    ],
+    "result": {
+        "item": "dishes:tinypotatoeswithcurdcheese",
+        "count": 1
+    }
+}

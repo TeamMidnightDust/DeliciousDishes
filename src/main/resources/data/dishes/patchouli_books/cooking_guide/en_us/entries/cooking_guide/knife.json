@@ -1,0 +1,22 @@
+{
+  "name": "Knife",
+  "icon": "dishes:knife",
+  "category": "dishes:general",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:knife",
+      "title": "Knife",
+      "link_recipe": false,
+      "text": "Allows you to cut certain resources into a smaller form."
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:knife"
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:potato_slice"
+    }
+  ]
+}

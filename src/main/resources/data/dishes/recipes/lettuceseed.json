@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "dishes:lettuce",
+            "item_h": "dishes:lettuce"
+        }
+    ],
+    "result": {
+        "item": "dishes:lettuceseed",
+        "count": 3
+    }
+}

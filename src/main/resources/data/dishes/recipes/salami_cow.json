@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "dishes:salt"
+        },
+        {
+            "item": "minecraft:beef"
+        }
+    ],
+    "result": {
+        "item": "dishes:salami",
+        "count": 1
+    }
+}

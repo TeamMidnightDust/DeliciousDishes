@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "dishes:tomato",
+            "item_h": "dishes:tomato"
+        }
+    ],
+    "result": {
+        "item": "dishes:tomatoseed",
+        "count": 3
+    }
+}

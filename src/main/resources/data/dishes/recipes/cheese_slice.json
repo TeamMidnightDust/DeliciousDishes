@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "dishes:cheese_roll"
+        }
+    ],
+    "result": {
+        "item": "dishes:cheese_slice",
+        "count": 3
+    }
+}

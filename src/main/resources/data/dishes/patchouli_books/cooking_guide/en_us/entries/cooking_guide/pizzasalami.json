@@ -1,0 +1,18 @@
+{
+  "name": "Pizza Salami",
+  "icon": "dishes:pizzasalami",
+  "category": "dishes:italian",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "dishes:pizzasalami",
+      "title": "Pizza Salami",
+      "link_recipe": false,
+      "text": "The classical pizza"
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:pizzasalami"
+    }
+  ]
+}

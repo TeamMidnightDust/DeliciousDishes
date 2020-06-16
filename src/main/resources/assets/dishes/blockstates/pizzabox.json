@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "dishes:block/pizzabox" },
+		"facing=east": { "model": "dishes:block/pizzabox", "y": 90 },
+		"facing=south": { "model": "dishes:block/pizzabox", "y": 180 },
+		"facing=west": { "model": "dishes:block/pizzabox", "y": 270 }
+    }
+}

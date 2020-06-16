@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:blasting",
+    "ingredient": {
+        "item": "dishes:salt_ore"
+    },
+    "result": "dishes:salt",
+    "experience": 0.1,
+    "cookingtime": 100
+}

@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        "KCP",
+        " # "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:bread"
+        },
+        "K": {
+            "item": "dishes:lettuce"
+        },
+        "C": {
+            "item": "minecraft:cooked_beef"
+        },
+		"P": {
+            "item": "dishes:plate"
+        }
+    },
+    "result": {
+        "item": "dishes:hamburger",
+        "count": 1
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "TPU",
+        "#_#"
+    ],
+    "key": {
+        "#": {
+            "item": "dishes:flour"
+        },
+        "T": {
+            "item": "dishes:tomato"
+        },
+		"P": {
+            "item": "dishes:cheese_slice"
+        },
+        "_": {
+            "item": "dishes:pizzabox"
+        },
+        "U": {
+            "item": "dishes:bacon"
+        }
+    },
+    "result": {
+        "item": "dishes:pizzabacon",
+        "count": 1
+    }
+}

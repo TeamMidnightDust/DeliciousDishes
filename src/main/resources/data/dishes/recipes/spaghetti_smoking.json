@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smoking",
+    "ingredient": {
+        "item": "dishes:raw_spaghetti"
+    },
+    "result": "dishes:spaghetti",
+    "experience": 0.1,
+    "cookingtime": 100
+}

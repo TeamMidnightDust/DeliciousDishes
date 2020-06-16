@@ -1,0 +1,18 @@
+{
+  "name": "Tomato Seeds",
+  "icon": "dishes:tomatoseed",
+  "category": "dishes:general",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:tomatoseed",
+      "title": "Tomato Seeds",
+      "link_recipe": false,
+      "text": "Tomato Seeds allow you to create a tomato farm."
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:tomatoseed"
+    }
+  ]
+}

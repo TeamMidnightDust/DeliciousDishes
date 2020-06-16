@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:baked_potato",
+            "item_h": "minecraft:baked_potato"
+        },
+		{
+            "item": "minecraft:cooked_porkchop",
+            "item_h": "minecraft:cooked_porkchop"
+        },
+        {
+            "item": "dishes:plate",
+            "item_h": "dishes:plate"
+        }
+    ],
+    "result": {
+        "item": "dishes:schnitzel",
+        "count": 1
+    }
+}

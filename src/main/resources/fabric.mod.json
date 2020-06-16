@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "dishes",
+  "version": "1.0.0",
+
+  "name": "Delicious Dishes",
+  "description": "Adds many cool new dishes with 3d models! Originally created for ModFest 1.16",
+  "authors": [
+    "Motschen",
+    "TeamMidnightDust"
+  ],
+  "contact": {
+    "homepage": "https://www.midnightdust.eu/",
+    "sources": "https://github.com/Motschen/simplystrawberrys"
+  },
+
+  "license": "MIT",
+  "icon": "assets/dishes/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "eu.midnightdust.motschen.dishes.DishesMain"
+    ],
+    "client": [
+      "eu.midnightdust.motschen.dishes.DishesClient"
+    ]
+  },
+
+  "depends": {
+    "fabricloader": ">=0.7.2",
+    "fabric": "*"
+  },
+  "suggests": {
+    "simplystrawberrys": "*",
+    "patchouli": "*"
+  }
+}
