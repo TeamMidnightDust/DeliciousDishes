@@ -1,0 +1,18 @@
+{
+  "name": "Salz",
+  "icon": "dishes:salt",
+  "category": "dishes:general",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:salt",
+      "title": "Sals",
+      "link_recipe": false,
+      "text": "Mit Salz kann viele Gerichte herstellen."
+    },
+	{
+      "type": "smelting",
+      "recipe": "dishes:salt_smelting"
+    }
+  ]
+}

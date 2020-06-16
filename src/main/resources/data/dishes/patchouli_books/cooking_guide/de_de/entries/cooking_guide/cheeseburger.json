@@ -1,0 +1,18 @@
+{
+  "name": "Cheeseburger",
+  "icon": "dishes:cheeseburger",
+  "category": "dishes:american",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:cheeseburger",
+      "title": "Cheeseburger",
+      "link_recipe": false,
+      "text": "Ein Hamburger mit Käse."
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:cheeseburger"
+    }
+  ]
+}

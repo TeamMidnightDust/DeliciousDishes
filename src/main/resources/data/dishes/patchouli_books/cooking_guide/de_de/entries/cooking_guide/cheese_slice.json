@@ -1,0 +1,18 @@
+{
+  "name": "Käsescheibe",
+  "icon": "dishes:cheese_slice",
+  "category": "dishes:general",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:cheese_slice",
+      "title": "Käsescheibe",
+      "link_recipe": false,
+      "text": "Eine Scheibe Käse, aus einer Käserolle geschnitten"
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:cheese_slice"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Salzerz",
+  "icon": "dishes:salt_ore",
+  "category": "dishes:general",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:salt_ore",
+      "title": "Salzerz",
+      "link_recipe": false,
+      "text": "Die Quelle von Salz."
+    },
+	{
+      "type": "smelting",
+      "recipe": "dishes:salt_smelting"
+    }
+  ]
+}
