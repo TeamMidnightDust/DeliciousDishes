@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "dishes",
-  "version": "1.0.1",
+  "version": "1.0.3",
 
   "name": "Delicious Dishes",
   "description": "Adds many cool new dishes with 3d models! Originally created for ModFest 1.16",
