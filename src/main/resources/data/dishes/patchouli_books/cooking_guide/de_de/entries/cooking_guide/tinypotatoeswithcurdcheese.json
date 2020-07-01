@@ -12,7 +12,15 @@
     },
 	{
       "type": "crafting",
-      "recipe": "dishes:tinypotatoeswithcurdcheese"
+      "recipe": "lil-tater:tinypotatoeswithcurdcheese"
+    },
+	{
+      "type": "crafting",
+      "recipe": "liltater:tinypotatoeswithcurdcheese"
+    },
+	{
+      "type": "crafting",
+      "recipe": "ltr:tinypotatoeswithcurdcheese"
     }
   ]
 }
