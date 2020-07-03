@@ -1,0 +1,26 @@
+{
+  "name": "小份芝士土豆",
+  "icon": "dishes:tinypotatoeswithcurdcheese",
+  "category": "dishes:german",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:tinypotatoeswithcurdcheese",
+      "title": "小份芝士土豆",
+      "link_recipe": false,
+      "text": "OMG! IT'S TINY POTATO OMG! #TATERGANG! - 该合成配方只在安装Lil Tater模组时生效！"
+    },
+	{
+      "type": "crafting",
+      "recipe": "lil-tater:tinypotatoeswithcurdcheese"
+    },
+	{
+      "type": "crafting",
+      "recipe": "liltater:tinypotatoeswithcurdcheese"
+    },
+	{
+      "type": "crafting",
+      "recipe": "ltr:tinypotatoeswithcurdcheese"
+    }
+  ]
+}

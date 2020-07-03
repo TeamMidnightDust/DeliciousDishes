@@ -1,0 +1,18 @@
+{
+  "name": "芝士片",
+  "icon": "dishes:cheese_slice",
+  "category": "dishes:general",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:cheese_slice",
+      "title": "芝士片",
+      "link_recipe": false,
+      "text": "芝士卷上切下来的一片芝士"
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:cheese_slice"
+    }
+  ]
+}

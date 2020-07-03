@@ -1,0 +1,22 @@
+{
+  "name": "萨拉米香肠",
+  "icon": "dishes:salami",
+  "category": "dishes:general",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:salami",
+      "title": "萨拉米香肠",
+      "link_recipe": false,
+      "text": "萨拉米香肠是一种用猪肉或牛肉制成的香肠。"
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:salami_pig"
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:salami_cow"
+    }
+  ]
+}

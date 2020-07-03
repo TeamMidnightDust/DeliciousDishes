@@ -1,0 +1,18 @@
+{
+  "name": "芝士土豆",
+  "icon": "dishes:potatoeswithcurdcheese",
+  "category": "dishes:german",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:potatoeswithcurdcheese",
+      "title": "芝士土豆",
+      "link_recipe": false,
+      "text": "非常美味的德国食物"
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:potatoeswithcurdcheese"
+    }
+  ]
+}

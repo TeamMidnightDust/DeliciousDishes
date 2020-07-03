@@ -1,0 +1,18 @@
+{
+  "name": "生菜",
+  "icon": "dishes:lettuce",
+  "category": "dishes:general",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:lettuce",
+      "title": "生菜",
+      "link_recipe": false,
+      "text": "生菜可用于做菜。可在村庄箱子里找到生菜种子。"
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:lettuceseed"
+    }
+  ]
+}

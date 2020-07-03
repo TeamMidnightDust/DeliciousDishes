@@ -1,0 +1,18 @@
+{
+  "name": "培根",
+  "icon": "dishes:bacon",
+  "category": "dishes:general",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:bacon",
+      "title": "培根",
+      "link_recipe": false,
+      "text": "培根可用于制作培根披萨。"
+    },
+	{
+      "type": "smelting",
+      "recipe": "dishes:bacon_smelting"
+    }
+  ]
+}
