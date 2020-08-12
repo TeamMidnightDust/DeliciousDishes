@@ -1,0 +1,18 @@
+{
+  "name": "披萨培根",
+  "icon": "dishes:pizzabacon",
+  "category": "dishes:italian",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "dishes:pizzabacon",
+      "title": "披萨培根",
+      "link_recipe": false,
+      "text": "加了培根的披萨。"
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:pizzabacon"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "牛排",
+  "icon": "dishes:steak",
+  "category": "dishes:american",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:steak",
+      "title": "牛排",
+      "link_recipe": false,
+      "text": "非常著名的菜肴。"
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:steak"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "番茄种子",
+  "icon": "dishes:tomatoseed",
+  "category": "dishes:general",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:tomatoseed",
+      "title": "番茄种子",
+      "link_recipe": false,
+      "text": "番茄种子可种出番茄。"
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:tomatoseed"
+    }
+  ]
+}

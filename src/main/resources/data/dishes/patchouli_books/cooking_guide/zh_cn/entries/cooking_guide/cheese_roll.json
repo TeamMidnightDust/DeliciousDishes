@@ -1,0 +1,18 @@
+{
+  "name": "芝士卷",
+  "icon": "dishes:cheese_roll",
+  "category": "dishes:general",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:cheese_roll",
+      "title": "芝士卷",
+      "link_recipe": false,
+      "text": "芝士卷"
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:cheese_roll"
+    }
+  ]
+}

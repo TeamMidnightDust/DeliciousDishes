@@ -1,0 +1,18 @@
+{
+  "name": "盐",
+  "icon": "dishes:salt",
+  "category": "dishes:general",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:salt",
+      "title": "盐",
+      "link_recipe": false,
+      "text": "盐可用于炸薯条。"
+    },
+	{
+      "type": "smelting",
+      "recipe": "dishes:salt_smelting"
+    }
+  ]
+}
