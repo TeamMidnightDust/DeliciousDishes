@@ -1,0 +1,26 @@
+{
+	"condition": {
+		"modid": "lil-tater"
+	},
+	"recipe": {
+      "type": "minecraft:crafting_shapeless",
+      "ingredients": [
+        {
+          "item": "lil-tater:lil_tater",
+          "item_h": "lil-tater:lil_tater"
+        },
+        {
+          "item": "minecraft:milk_bucket",
+          "item_h": "minecraft:milk_bucket"
+        },
+        {
+          "item": "dishes:plate",
+          "item_h": "dishes:plate"
+        }
+      ],
+      "result": {
+        "item": "dishes:tinypotatoeswithcurdcheese",
+        "count": 1
+      }
+    }
+}

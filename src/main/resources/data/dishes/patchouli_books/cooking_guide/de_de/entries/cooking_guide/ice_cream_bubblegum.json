@@ -1,0 +1,14 @@
+{
+  "name": "Kaugummieis",
+  "icon": "dishes:ice_cream_bubblegum",
+  "category": "dishes:sweets",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:ice_cream_bubblegum",
+      "title": "Kaugummieis",
+      "link_recipe": false,
+      "text": "Wer mag Eiscreme bitte nicht? Erhältlich beim Eiscreme-Händler."
+    }
+  ]
+}

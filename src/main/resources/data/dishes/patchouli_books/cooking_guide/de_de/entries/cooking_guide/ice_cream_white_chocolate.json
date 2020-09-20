@@ -1,0 +1,14 @@
+{
+  "name": "Weißes Schokoeis",
+  "icon": "dishes:ice_cream_white_chocolate",
+  "category": "dishes:sweets",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:ice_cream_white_chocolate",
+      "title": "Weißes Schokoeis",
+      "link_recipe": false,
+      "text": "Wer mag Eiscreme bitte nicht? Erhältlich beim Eiscreme-Händler."
+    }
+  ]
+}

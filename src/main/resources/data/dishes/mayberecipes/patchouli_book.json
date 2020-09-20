@@ -1,0 +1,20 @@
+{
+	"condition": {
+		"modid": "patchouli"
+	},
+	"recipe": {
+      "type": "minecraft:crafting_shapeless",
+      "ingredients": [
+        {
+          "item": "dishes:salt"
+        },
+        {
+          "item": "minecraft:writable_book"
+        }
+      ],
+      "result": {
+        "item": "dishes:cooking_guide",
+        "count": 1
+      }
+    }
+}

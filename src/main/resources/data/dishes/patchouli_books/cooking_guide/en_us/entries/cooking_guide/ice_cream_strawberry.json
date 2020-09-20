@@ -1,0 +1,14 @@
+{
+  "name": "Ice Cream Strawberry",
+  "icon": "dishes:ice_cream_strawberry",
+  "category": "dishes:sweets",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:ice_cream_strawberry",
+      "title": "Ice Cream Strawberry",
+      "link_recipe": false,
+      "text": "Who doesn't love ice cream? Sold by the Ice Cream trader."
+    }
+  ]
+}

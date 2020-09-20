@@ -1,0 +1,12 @@
+{
+	"credit": "made by Motschen",
+	"parent": "dishes:block/hamburger1",
+	"textures": {
+		"0": "block/quartz_block_side",
+		"1": "dishes:item/space_bread",
+		"2": "dishes:item/space_beef",
+		"3": "block/carrots_stage3",
+		"4": "block/red_terracotta",
+		"particle": "block/quartz_block_side"
+	}
+}

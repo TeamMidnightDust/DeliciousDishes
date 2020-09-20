@@ -1,0 +1,18 @@
+{
+  "name": "Geburtstagskuchen",
+  "icon": "dishes:birthday_cake",
+  "category": "dishes:sweets",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:birthday_cake",
+      "title": "Geburtstagskuchen",
+      "link_recipe": false,
+      "text": "Happy Birthday!"
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:birthday_cake"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+	"condition": {
+		"modid": "sandwichable"
+	},
+    "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+            "TPU",
+            "#_#"
+        ],
+        "key": {
+            "#": {
+                "item": "dishes:flour"
+            },
+            "T": {
+                "item": "sandwichable:tomato"
+            },
+            "P": {
+                "item": "dishes:cheese_slice"
+            },
+            "_": {
+                "item": "dishes:pizzabox"
+            },
+            "U": {
+                "item": "minecraft:cooked_salmon"
+            }
+        },
+        "result": {
+            "item": "dishes:pizzatuna",
+            "count": 1
+        }
+    }
+}

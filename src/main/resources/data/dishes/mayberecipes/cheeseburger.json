@@ -1,0 +1,34 @@
+{
+	"condition": {
+		"modid": "sandwichable"
+	},
+	"recipe": {
+      "type": "minecraft:crafting_shaped",
+      "pattern": [
+        " # ",
+        "KCF",
+        " #P"
+      ],
+      "key": {
+        "#": {
+          "item": "minecraft:bread"
+        },
+        "K": {
+          "item": "sandwichable:lettuce_leaf"
+        },
+        "C": {
+          "item": "minecraft:cooked_beef"
+        },
+        "F": {
+          "item": "dishes:cheese_slice"
+        },
+        "P": {
+          "item": "dishes:plate"
+        }
+      },
+      "result": {
+        "item": "dishes:cheeseburger",
+        "count": 1
+      }
+    }
+}

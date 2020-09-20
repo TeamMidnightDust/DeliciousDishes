@@ -1,0 +1,7 @@
+{
+	"credit": "made by Motschen",
+	"parent": "dishes:item/ice_cream_vanilla",
+	"textures": {
+		"1": "dishes:item/ice_cream_strawberry"
+	}
+}

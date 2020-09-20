@@ -1,0 +1,14 @@
+{
+  "name": "Bananeneis",
+  "icon": "dishes:ice_cream_banana",
+  "category": "dishes:sweets",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:ice_cream_banana",
+      "title": "Bananeneis",
+      "link_recipe": false,
+      "text": "Wer mag Eiscreme bitte nicht? Erhältlich beim Eiscreme-Händler."
+    }
+  ]
+}

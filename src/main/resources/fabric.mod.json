@@ -4,14 +4,14 @@
   "version": "${version}",
 
   "name": "Delicious Dishes",
-  "description": "Adds many cool new dishes with 3d models! Originally created for ModFest 1.16",
+  "description": "Adds many cool new dishes with 3d models and animations!",
   "authors": [
     "Motschen",
     "TeamMidnightDust"
   ],
   "contact": {
     "homepage": "https://www.midnightdust.eu/",
-    "sources": "https://github.com/Motschen/simplystrawberrys"
+    "sources": "https://github.com/TeamMidnightDust/DeliciousDishes"
   },
 
   "license": "MIT",
@@ -24,6 +24,9 @@
     ],
     "client": [
       "eu.midnightdust.motschen.dishes.DishesClient"
+    ],
+    "modmenu": [
+      "eu.midnightdust.motschen.dishes.config.ModMenuIntegration"
     ]
   },
 

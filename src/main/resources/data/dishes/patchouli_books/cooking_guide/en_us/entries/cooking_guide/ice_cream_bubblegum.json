@@ -1,0 +1,14 @@
+{
+  "name": "Ice Cream Bubblegum",
+  "icon": "dishes:ice_cream_bubblegum",
+  "category": "dishes:sweets",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:ice_cream_bubblegum",
+      "title": "Ice Cream Bubblegum",
+      "link_recipe": false,
+      "text": "Who doesn't love ice cream? Sold by the Ice Cream trader."
+    }
+  ]
+}

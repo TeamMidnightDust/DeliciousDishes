@@ -1,0 +1,31 @@
+{
+	"condition": {
+		"modid": "sandwichable"
+	},
+	"recipe": {
+      "type": "minecraft:crafting_shaped",
+      "pattern": [
+        " # ",
+        "KCP",
+        " # "
+      ],
+      "key": {
+        "#": {
+          "item": "minecraft:bread"
+        },
+        "K": {
+          "item": "sandwichable:lettuce_leaf"
+        },
+        "C": {
+          "item": "minecraft:cooked_chicken"
+        },
+        "P": {
+          "item": "dishes:plate"
+        }
+      },
+      "result": {
+        "item": "dishes:chickenburger",
+        "count": 1
+      }
+    }
+}

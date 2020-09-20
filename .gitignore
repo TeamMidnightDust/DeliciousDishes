@@ -1,7 +1,11 @@
 # gradle
 
 .gradle/
-build/
+build/classes/
+build/generated/
+build/libs/
+build/resources/
+build/tmp/
 out/
 classes/
 
