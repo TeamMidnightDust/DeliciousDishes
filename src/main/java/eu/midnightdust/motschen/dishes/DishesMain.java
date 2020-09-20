@@ -20,6 +20,8 @@ import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+import java.util.Locale;
+
 public class DishesMain implements ModInitializer {
     public static final String MOD_ID = "dishes";
     public static DishesConfig DD_CONFIG;
@@ -165,5 +167,28 @@ public class DishesMain implements ModInitializer {
             Flags.init();
         }
         WorldGenInit.init();
+
+    }
+    public enum Ores implements ItemConvertible {
+        SaltOre(4, 20, 40, 120);
+
+        public final String name;
+        public final int veinSize;
+        public final int veinsPerChunk;
+        public final int minY;
+        public final int maxY;
+
+        Ores(int veinSize, int veinsPerChunk, int minY, int maxY) {
+            name = this.toString().toLowerCase(Locale.ROOT);
+            this.veinSize = veinSize;
+            this.veinsPerChunk = veinsPerChunk;
+            this.minY = minY;
+            this.maxY = maxY;
+        }
+
+        @Override
+        public Item asItem() {
+            return SaltOre.asItem();
+        }
     }
 }

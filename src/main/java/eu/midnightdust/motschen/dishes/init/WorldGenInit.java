@@ -3,8 +3,6 @@ package eu.midnightdust.motschen.dishes.init;
 import eu.midnightdust.motschen.dishes.config.DishesConfig;
 import eu.midnightdust.motschen.dishes.entities.IceCreamTraderSpawn;
 import eu.midnightdust.motschen.dishes.world.LootModifier;
-import eu.midnightdust.motschen.dishes.world.OreFeatureInjector;
-import eu.midnightdust.motschen.dishes.world.OreFeatures;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.server.world.ServerWorld;
@@ -18,8 +16,7 @@ public class WorldGenInit {
         }
         if (config.worldgen.loot == true) { LootModifier.init(); }
         if (config.worldgen.salt_ore == true) {
-            OreFeatures.init();
-            OreFeatureInjector.init();
+            eu.midnightdust.motschen.dishes.world.SaltOre.initBiomeFeatures();
         }
 
         if (config.trader.enabled == true && config.trader.spawntrader == true) {
