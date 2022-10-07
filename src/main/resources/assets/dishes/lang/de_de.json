@@ -13,11 +13,11 @@
 	"item.dishes.tomato":"Tomate",
 	"item.dishes.tomatobush":"Tomatenbusch",
 	"item.dishes.tomatoseed":"Tomatensamen",
-	"item.dishes.lettuce":"Salat",
+	"item.dishes.lettuce":"Eisbergsalat",
 	"item.dishes.raw_bacon":"Roher Speck",
 	"item.dishes.bacon":"Speck",
-	"item.dishes.lettucebush":"Salatbusch",
-	"item.dishes.lettuceseed":"Salatsamen",
+	"item.dishes.lettucebush":"Eisbergsalatbusch",
+	"item.dishes.lettuceseed":"Eisbergsalatsamen",
 	"item.dishes.potato_slice":"Kartoffelstückchen",
 	"item.dishes.raw_fries":"Rohe Pommes",
 	"item.dishes.fries":"Pommes",
@@ -26,6 +26,7 @@
 	"item.dishes.cheese_slice":"Käsescheibe",
 	"item.dishes.knife":"Messer",
 	"block.dishes.plate":"Teller",
+	"block.dishes.bowl":"Schüssel",
 	"block.dishes.pizzabox":"Leerer Pizzakarton",
 	"block.dishes.potatoeswithcurdcheese":"Kartoffeln mit Quark",
 	"block.dishes.tinypotatoeswithcurdcheese":"Tiny Potatoes mit Quark",
@@ -40,6 +41,7 @@
 	"block.dishes.chickenburger":"Chickenburger",
 	"block.dishes.cheeseburger":"Cheeseburger",
 	"block.dishes.fishandchips":"Fish and Chips",
+	"block.dishes.borscht":"Borschtsch",
 
 	"itemGroup.dishes.sweets":"Delicious Dishes - Süßigkeiten",
 	"item.dishes.ice_cream_vanilla":"Vanilleeis",
@@ -47,6 +49,7 @@
 	"item.dishes.ice_cream_banana":"Bananeneis",
 	"item.dishes.ice_cream_pear":"Birneneis",
 	"item.dishes.ice_cream_sweetberry":"Süßbeereis",
+	"item.dishes.ice_cream_glowberry":"Leuchtbeereis",
 	"item.dishes.ice_cream_blueberry":"Blaubeereis",
 	"item.dishes.ice_cream_bubblegum":"Kaugummieis",
 	"item.dishes.ice_cream_chocolate":"Schokoladeneis",
@@ -54,5 +57,11 @@
 	"item.dishes.ice_cream_trader_spawn_egg":"Erschaffe Eiscremeverkäufer",
 	"entity.dishes.ice_cream_trader":"Eiscremeverkäufer",
 
-	"block.dishes.birthday_cake": "Geburtstagskuchen"
+	"dishes.midnightconfig.title":"Delicious Dishes Konfiguration",
+
+	"dishes.midnightconfig.tomatoes":"Aktiviere Tomaten",
+	"dishes.midnightconfig.lettuce":"Aktiviere Eisbergsalat",
+	"dishes.midnightconfig.saltOre":"Aktiviere Salzerz",
+	"dishes.midnightconfig.customLoot":"Aktiviere Anpassung von Loot",
+	"dishes.midnightconfig.spawnTrader":"Aktiviere den Eiscremeverkäufer"
 }

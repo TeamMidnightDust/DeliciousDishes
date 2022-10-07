@@ -1,0 +1,14 @@
+{
+  "name": "Süßbeereis",
+  "icon": "dishes:ice_cream_sweetberry",
+  "category": "dishes:sweets",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:ice_cream_sweetberry",
+      "title": "Süßbeereis",
+      "link_recipe": false,
+      "text": "Wer mag Eiscreme bitte nicht? Erhältlich beim Eiscreme-Händler."
+    }
+  ]
+}

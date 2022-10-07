@@ -1,0 +1,14 @@
+{
+  "name": "Ice Cream Glow Berry",
+  "icon": "dishes:ice_cream_glowberry",
+  "category": "dishes:sweets",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:ice_cream_glowberry",
+      "title": "Ice Cream Glow Berry",
+      "link_recipe": false,
+      "text": "Who doesn't love ice cream? Sold by the Ice Cream trader."
+    }
+  ]
+}

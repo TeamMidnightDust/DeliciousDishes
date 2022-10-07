@@ -22,35 +22,22 @@ import net.minecraft.world.WorldView;
 public class Dish extends HorizontalFacingBlock {
 
     public static final IntProperty DISH_BITES = DishBites.DISH_BITES;
-    private static final VoxelShape NORTH_SHAPE;
-    private static final VoxelShape EAST_SHAPE;
-    private static final VoxelShape SOUTH_SHAPE;
-    private static final VoxelShape WEST_SHAPE;
+    private static final VoxelShape SHAPE;
 
     public Dish() {
-        super(FabricBlockSettings.copy(Blocks.STONE).nonOpaque().sounds(BlockSoundGroup.STONE));
+        super(FabricBlockSettings.of(Material.STONE).nonOpaque().sounds(BlockSoundGroup.STONE));
         this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(DISH_BITES, 0));
     }
 
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (player.getHungerManager().isNotFull()) {
-            switch (state.get(DISH_BITES)) {
-                case 0: world.setBlockState(pos, state.with(DISH_BITES, 1));
-                    player.getHungerManager().add(2, 4);
-                    return ActionResult.SUCCESS;
-                case 1: world.setBlockState(pos, state.with(DISH_BITES, 2));
-                    player.getHungerManager().add(2, 4);
-                    return ActionResult.SUCCESS;
-                case 2: world.setBlockState(pos, state.with(DISH_BITES, 3));
-                    player.getHungerManager().add(2, 4);
-                    return ActionResult.SUCCESS;
-                case 3: world.setBlockState(pos, state.with(DISH_BITES, 4));
-                    player.getHungerManager().add(2, 4);
-                    return ActionResult.SUCCESS;
-                case 4: world.setBlockState(pos, DishesMain.Plate.getDefaultState());
-                    player.getHungerManager().add(2, 1);
-                    return ActionResult.SUCCESS;
+            if (state.get(DISH_BITES) == 4) {
+                world.setBlockState(pos, DishesMain.Plate.getDefaultState());
+                player.getHungerManager().add(2, 1);
+                return ActionResult.SUCCESS;
             }
+            world.setBlockState(pos, state.with(DISH_BITES, state.get(DISH_BITES) + 1));
+            player.getHungerManager().add(2, 4);
             return ActionResult.SUCCESS;
         }
         else {
@@ -71,21 +58,10 @@ public class Dish extends HorizontalFacingBlock {
     }
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-        switch (state.get(FACING)) {
-            case NORTH: return NORTH_SHAPE;
-            case EAST: return EAST_SHAPE;
-            case SOUTH: return SOUTH_SHAPE;
-            case WEST: return WEST_SHAPE;
-            default: return super.getOutlineShape(state, view, pos, context);
-        }
+        return SHAPE;
     }
     static {
-        VoxelShape shape = createCuboidShape(0, 0, 0, 16, 5, 16);
-
-        EAST_SHAPE = shape;
-        NORTH_SHAPE = shape;
-        SOUTH_SHAPE = shape;
-        WEST_SHAPE = shape;
+        SHAPE = createCuboidShape(0, 0, 0, 16, 5, 16);
     }
     public boolean canPlaceAt(BlockState state, WorldView worldView, BlockPos pos) {
         return !worldView.isAir(pos.down());

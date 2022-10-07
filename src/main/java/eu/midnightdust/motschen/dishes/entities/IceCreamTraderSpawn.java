@@ -5,14 +5,12 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.SpawnRestriction;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.*;
 import net.minecraft.world.level.ServerWorldProperties;
 import net.minecraft.world.poi.PointOfInterestStorage;
-import net.minecraft.world.poi.PointOfInterestType;
 
 import java.util.Iterator;
 import java.util.Optional;
@@ -20,14 +18,13 @@ import java.util.Random;
 
 public class IceCreamTraderSpawn {
     public static void tick(ServerWorld serverWorld) {
-
-            if (serverWorld.getGameRules().getBoolean(GameRules.DO_TRADER_SPAWNING)) {
-                if (serverWorld.getTimeOfDay() % (24000 * 3) == 1500) {
-                    if (serverWorld.getRandom().nextInt(100) < 10) {
-                        spawnTrader(serverWorld);
-                    }
+        if (serverWorld.getGameRules().getBoolean(GameRules.DO_TRADER_SPAWNING)) {
+            if (serverWorld.getTimeOfDay() % (24000 * 3) == 1500) {
+                if (serverWorld.getRandom().nextInt(100) < 10) {
+                    spawnTrader(serverWorld);
                 }
             }
+        }
     }
 
     private static void spawnTrader(ServerWorld serverWorld) {
@@ -36,11 +33,11 @@ public class IceCreamTraderSpawn {
         if (playerentity != null) {
             BlockPos blockPos = playerentity.getBlockPos();
             PointOfInterestStorage pointOfInterestStorage = serverWorld.getPointOfInterestStorage();
-            Optional<BlockPos> optional = pointOfInterestStorage.getPosition(PointOfInterestType.MEETING.getCompletionCondition(), (blockPosX) -> true, blockPos, 48, PointOfInterestStorage.OccupationStatus.ANY);
+            Optional<BlockPos> optional = pointOfInterestStorage.getPosition(RegistryEntry::hasKeyAndValue, (blockPosX) -> true, blockPos, 48, PointOfInterestStorage.OccupationStatus.ANY);
             BlockPos blockPos2 = optional.orElse(blockPos);
             BlockPos blockPos3 = getLlamaSpawnPosition(serverWorld, blockPos2, 48);
             if (blockPos3 != null && wontSuffocateAt(serverWorld, blockPos3)) {
-                IceCreamTraderEntity traderEntity = IceCreamTraderInit.ICE_CREAM_TRADER.spawn(serverWorld, (CompoundTag) null, (Text) null, (PlayerEntity) null, blockPos3, SpawnReason.EVENT, false, false);
+                IceCreamTraderEntity traderEntity = IceCreamTraderInit.ICE_CREAM_TRADER.spawn(serverWorld, null,null,null, blockPos3, SpawnReason.EVENT, false, false);
                 if (traderEntity != null) {
                     serverWorldProperties.setWanderingTraderId(traderEntity.getUuid());
                     traderEntity.setDespawnDelay(32000);
@@ -69,13 +66,13 @@ public class IceCreamTraderSpawn {
 
 
     private static boolean wontSuffocateAt(BlockView blockView, BlockPos blockPos) {
-        Iterator var3 = BlockPos.iterate(blockPos, blockPos.add(1, 2, 1)).iterator();
+        Iterator<BlockPos> var3 = BlockPos.iterate(blockPos, blockPos.add(1, 2, 1)).iterator();
         BlockPos blockPos2;
         do {
             if (!var3.hasNext()) {
                 return true;
             }
-            blockPos2 = (BlockPos) var3.next();
+            blockPos2 = var3.next();
         } while (blockView.getBlockState(blockPos2).getCollisionShape(blockView, blockPos2).isEmpty());
         return false;
     }

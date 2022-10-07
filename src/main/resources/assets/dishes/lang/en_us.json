@@ -26,10 +26,12 @@
 	"item.dishes.cheese_slice":"Cheese Slice",
 	"item.dishes.knife":"Knife",
 	"block.dishes.plate":"Plate",
+	"block.dishes.bowl":"Bowl",
 	"block.dishes.pizzabox":"Empty Pizzabox",
 	"block.dishes.potatoeswithcurdcheese":"Potatoes with Curd Cheese",
 	"block.dishes.tinypotatoeswithcurdcheese":"Tiny Potatoes with Curd Cheese",
 	"block.dishes.schnitzel":"Schnitzel",
+	"block.dishes.pizzamargherita":"Pizza Margherita",
 	"block.dishes.pizzasalami":"Pizza Salami",
 	"block.dishes.pizzaham":"Pizza Ham",
 	"block.dishes.pizzatuna":"Pizza Tuna",
@@ -40,7 +42,9 @@
 	"block.dishes.chickenburger":"Chickenburger",
 	"block.dishes.cheeseburger":"Cheeseburger",
 	"block.dishes.spaceburger":"Spaceburger",
+	"block.dishes.spaceburger.tooltip":"§bTastes... suspicious.",
 	"block.dishes.fishandchips":"Fish and Chips",
+	"block.dishes.borscht":"Borscht",
 
 	"itemGroup.dishes.sweets":"Delicious Dishes - Sweets",
 	"item.dishes.ice_cream_vanilla":"Vanilla Ice Cream",
@@ -48,6 +52,7 @@
 	"item.dishes.ice_cream_banana":"Banana Ice Cream",
 	"item.dishes.ice_cream_pear":"Pear Ice Cream",
 	"item.dishes.ice_cream_sweetberry":"Sweet Berry Ice Cream",
+	"item.dishes.ice_cream_glowberry":"Glow Berry Ice Cream",
 	"item.dishes.ice_cream_blueberry":"Blueberry Ice Cream",
 	"item.dishes.ice_cream_bubblegum":"Bubblegum Ice Cream",
 	"item.dishes.ice_cream_chocolate":"Chocolate Ice Cream",
@@ -55,17 +60,11 @@
 	"item.dishes.ice_cream_trader_spawn_egg":"Spawn Ice Cream Trader",
 	"entity.dishes.ice_cream_trader":"Ice Cream Trader",
 
-	"block.dishes.birthday_cake":"Birthday Cake",
+	"dishes.midnightconfig.title":"Delicious Dishes Config",
 
-	"text.autoconfig.dishes.title":"Delicious Dishes Config",
-	"text.autoconfig.dishes.category.main":"Crops",
-	"text.autoconfig.dishes.category.worldgen":"World Gen",
-	"text.autoconfig.dishes.category.trader":"Trader",
-
-	"text.autoconfig.dishes.option.main.tomatoes":"Enable Tomatoes",
-	"text.autoconfig.dishes.option.main.lettuce":"Enable Lettuce",
-	"text.autoconfig.dishes.option.worldgen.salt_ore":"Enable Salt Ore",
-	"text.autoconfig.dishes.option.worldgen.loot":"Enable Loot Tables",
-	"text.autoconfig.dishes.option.trader.enabled":"Enable Ice Cream Trader",
-	"text.autoconfig.dishes.option.trader.spawntrader":"Spawn Ice Cream Trader"
+	"dishes.midnightconfig.tomatoes":"Enable Tomatoes",
+	"dishes.midnightconfig.lettuce":"Enable Lettuce",
+	"dishes.midnightconfig.saltOre":"Enable Salt Ore",
+	"dishes.midnightconfig.customLoot":"Enable Custom Loot",
+	"dishes.midnightconfig.spawnTrader":"Spawn Ice Cream Trader"
 }

@@ -8,21 +8,21 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
-
-import java.util.Random;
 
 public class IceCreamTraderTradeOffers {
     public static final Int2ObjectMap<TradeOffers.Factory[]> ICE_CREAM_TRADER_TRADES;
 
     private static Int2ObjectMap<TradeOffers.Factory[]> copyToFastUtilMap(ImmutableMap<Integer, TradeOffers.Factory[]> map) {
-        return new Int2ObjectOpenHashMap(map);
+        return new Int2ObjectOpenHashMap<>(map);
     }
 
     static {
         ICE_CREAM_TRADER_TRADES = copyToFastUtilMap(ImmutableMap.of(1, new TradeOffers.Factory[]
-                {new IceCreamTraderTradeOffers.SellItemFactory(DishesMain.IceCreamVanilla, 1, 1, 10, 3),
+                {
+                        new IceCreamTraderTradeOffers.SellItemFactory(DishesMain.IceCreamVanilla, 1, 1, 10, 3),
                         new IceCreamTraderTradeOffers.SellItemFactory(DishesMain.IceCreamChocolate, 1, 1, 10, 3),
                         new IceCreamTraderTradeOffers.SellItemFactory(DishesMain.IceCreamWhiteChocolate, 1, 1, 10, 3),
                         new IceCreamTraderTradeOffers.SellItemFactory(DishesMain.IceCreamStrawberry, 1, 1, 10, 3),
@@ -30,7 +30,9 @@ public class IceCreamTraderTradeOffers {
                         new IceCreamTraderTradeOffers.SellItemFactory(DishesMain.IceCreamPear, 1, 1, 10, 3),
                         new IceCreamTraderTradeOffers.SellItemFactory(DishesMain.IceCreamSweetberry, 1, 1, 10, 3),
                         new IceCreamTraderTradeOffers.SellItemFactory(DishesMain.IceCreamBlueberry, 1, 1, 10, 3),
-                        new IceCreamTraderTradeOffers.SellItemFactory(DishesMain.IceCreamBubblegum, 1, 1, 10, 3)}));
+                        new IceCreamTraderTradeOffers.SellItemFactory(DishesMain.IceCreamBubblegum, 1, 1, 10, 3),
+                        new IceCreamTraderTradeOffers.SellItemFactory(DishesMain.IceCreamGlowberry, 1, 1, 10, 3)
+                }));
     }
 
     static class SellItemFactory implements TradeOffers.Factory {

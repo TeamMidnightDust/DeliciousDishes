@@ -1,5 +1,5 @@
 {
-	"credit": "made by Motschen",
+	"credit": "Made with Blockbench",
 	"textures": {
 		"0": "dishes:block/lettuce_stage3",
 		"particle": "dishes:block/lettuce_stage3"
@@ -39,6 +39,17 @@
 			"faces": {
 				"north": {"uv": [0, 1, 16, 16], "texture": "#0"},
 				"south": {"uv": [0, 1, 16, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [5, 0, 5],
+			"to": [11, 5, 11],
+			"faces": {
+				"north": {"uv": [5, 10, 11, 15], "texture": "#0"},
+				"east": {"uv": [5, 8, 10, 14], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [5, 10, 11, 15], "rotation": 180, "texture": "#0"},
+				"west": {"uv": [6, 6, 11, 12], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [5, 6, 11, 12], "texture": "#0"}
 			}
 		}
 	]

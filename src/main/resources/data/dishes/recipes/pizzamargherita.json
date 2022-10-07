@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "TP ",
+        "#_#"
+    ],
+    "key": {
+        "#": {
+            "item": "dishes:flour"
+        },
+        "T": {
+            "item": "dishes:tomato"
+        },
+		"P": {
+            "item": "dishes:cheese_slice"
+        },
+        "_": {
+            "item": "dishes:pizzabox"
+        }
+    },
+    "result": {
+        "item": "dishes:pizzamargherita",
+        "count": 1
+    }
+}

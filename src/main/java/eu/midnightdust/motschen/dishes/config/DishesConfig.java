@@ -1,21 +1,11 @@
 package eu.midnightdust.motschen.dishes.config;
 
-import me.sargunvohra.mcmods.autoconfig1u.ConfigData;
-import me.sargunvohra.mcmods.autoconfig1u.annotation.Config;
-import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
+import eu.midnightdust.lib.config.MidnightConfig;
 
-@Config(name = "dishes")
-public class DishesConfig implements ConfigData {
-
-    @ConfigEntry.Category("main")
-    @ConfigEntry.Gui.TransitiveObject
-    public MainConfig main = new MainConfig();
-
-    @ConfigEntry.Category("worldgen")
-    @ConfigEntry.Gui.TransitiveObject
-    public WorldGenConfig worldgen = new WorldGenConfig();
-
-    @ConfigEntry.Category("trader")
-    @ConfigEntry.Gui.TransitiveObject
-    public IceCreamTraderConfig trader = new IceCreamTraderConfig();
+public class DishesConfig extends MidnightConfig {
+    @Entry public static boolean spawnTrader = true;
+    @Entry public static boolean tomatoes = true;
+    @Entry public static boolean lettuce = true;
+    @Entry public static boolean saltOre = true;
+    @Entry public static boolean customLoot = true;
 }

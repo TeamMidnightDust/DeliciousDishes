@@ -17,7 +17,7 @@ import net.minecraft.util.registry.Registry;
 
 public class IceCreamTraderInit {
     public static final EntityType<IceCreamTraderEntity> ICE_CREAM_TRADER =
-            Registry.register(Registry.ENTITY_TYPE,new Identifier(DishesMain.MOD_ID,"ice_cream_trader"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE,IceCreamTraderEntity::new).dimensions(EntityDimensions.fixed(1f,2f)).trackable(100,4).build());
+            Registry.register(Registry.ENTITY_TYPE,new Identifier(DishesMain.MOD_ID,"ice_cream_trader"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, IceCreamTraderEntity::new).dimensions(EntityDimensions.fixed(1f,2f)).trackRangeBlocks(100).trackedUpdateRate(4).build());
 
     public static void init() {
         Registry.register(Registry.ITEM, new Identifier(DishesMain.MOD_ID,"ice_cream_trader_spawn_egg"), new SpawnEggItem(ICE_CREAM_TRADER,5349438,15377456, new Item.Settings().group(ItemGroup.MISC)));

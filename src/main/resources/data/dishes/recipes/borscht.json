@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:beetroot",
+            "item_h": "minecraft:beetroot"
+        },
+		{
+            "item": "minecraft:milk_bucket",
+            "item_h": "minecraft:milk_bucket"
+        },
+        {
+            "item": "dishes:bowl",
+            "item_h": "dishes:bowl"
+        }
+    ],
+    "result": {
+        "item": "dishes:borscht",
+        "count": 1
+    }
+}

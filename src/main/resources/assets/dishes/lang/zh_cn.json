@@ -52,7 +52,5 @@
 	"item.dishes.ice_cream_chocolate":"巧克力冰淇淋",
 	"item.dishes.ice_cream_white_chocolate":"白巧克力冰淇淋",
     "item.dishes.ice_cream_trader_spawn_egg": "冰淇淋商人刷怪蛋",
-    "entity.dishes.ice_cream_trader": "冰淇淋商人",
-
-    "block.dishes.birthday_cake": "生日蛋糕"
+    "entity.dishes.ice_cream_trader": "冰淇淋商人"
 }

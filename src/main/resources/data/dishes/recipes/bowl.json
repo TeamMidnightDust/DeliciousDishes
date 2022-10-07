@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "# #",
+        " _ "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:quartz_stairs"
+        },
+        "_": {
+            "item": "minecraft:quartz_slab"
+        }
+    },
+    "result": {
+        "item": "dishes:bowl",
+        "count": 1
+    }
+}

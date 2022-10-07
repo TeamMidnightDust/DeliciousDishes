@@ -1,0 +1,18 @@
+{
+  "name": "Borscht",
+  "icon": "dishes:borscht",
+  "category": "dishes:ukrainian",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:borscht",
+      "title": "Borscht",
+      "link_recipe": false,
+      "text": "Traditional Ukrainian beetroot soup usually served with sour cream."
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:borscht"
+    }
+  ]
+}

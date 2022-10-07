@@ -1,0 +1,20 @@
+{
+    "variants": {
+        "facing=north,sips=0": { "model": "dishes:block/borscht" },
+		"facing=east,sips=0": { "model": "dishes:block/borscht", "y": 90 },
+		"facing=south,sips=0": { "model": "dishes:block/borscht", "y": 180 },
+		"facing=west,sips=0": { "model": "dishes:block/borscht", "y": 270 },
+		"facing=north,sips=1": { "model": "dishes:block/borscht1" },
+		"facing=east,sips=1": { "model": "dishes:block/borscht1", "y": 90 },
+		"facing=south,sips=1": { "model": "dishes:block/borscht1", "y": 180 },
+		"facing=west,sips=1": { "model": "dishes:block/borscht1", "y": 270 },
+		"facing=north,sips=2": { "model": "dishes:block/borscht2" },
+		"facing=east,sips=2": { "model": "dishes:block/borscht2", "y": 90 },
+		"facing=south,sips=2": { "model": "dishes:block/borscht2", "y": 180 },
+		"facing=west,sips=2": { "model": "dishes:block/borscht2", "y": 270 },
+		"facing=north,sips=3": { "model": "dishes:block/borscht3" },
+		"facing=east,sips=3": { "model": "dishes:block/borscht3", "y": 90 },
+		"facing=south,sips=3": { "model": "dishes:block/borscht3", "y": 180 },
+		"facing=west,sips=3": { "model": "dishes:block/borscht3", "y": 270 }
+    }
+}

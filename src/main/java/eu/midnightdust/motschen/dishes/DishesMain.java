@@ -5,11 +5,11 @@ import eu.midnightdust.motschen.dishes.blockstates.DishBites;
 import eu.midnightdust.motschen.dishes.compat.CookingGuideItem;
 import eu.midnightdust.motschen.dishes.compat.Flags;
 import eu.midnightdust.motschen.dishes.config.DishesConfig;
-import eu.midnightdust.motschen.dishes.init.BlockEntityInit;
 import eu.midnightdust.motschen.dishes.init.CropInit;
+import eu.midnightdust.motschen.dishes.init.IceCreamTraderInit;
 import eu.midnightdust.motschen.dishes.init.WorldGenInit;
-import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
-import me.sargunvohra.mcmods.autoconfig1u.serializer.JanksonConfigSerializer;
+import eu.midnightdust.motschen.dishes.item.DishItem;
+import eu.midnightdust.motschen.dishes.item.IceCreamItem;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -22,8 +22,6 @@ import net.minecraft.util.registry.Registry;
 
 public class DishesMain implements ModInitializer {
     public static final String MOD_ID = "dishes";
-    public static DishesConfig DD_CONFIG;
-
 
     public static final ItemGroup MainGroup = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "main"), () -> new ItemStack(DishesMain.CheeseRoll));
     public static final ItemGroup DishesGroup = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "dishes"), () -> new ItemStack(DishesMain.FishAndChips));
@@ -31,10 +29,12 @@ public class DishesMain implements ModInitializer {
     public static final ItemGroup SweetsGroup = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "sweets"), () -> new ItemStack(DishesMain.IceCreamVanilla));
     public static final Item CookingGuide = new CookingGuideItem(new Item.Settings().maxCount(1));
     public static final Block Plate = new Plate();
+    public static final Block Bowl = new Bowl();
     public static final Block PizzaBox = new Plate();
     public static final Block PotatoesWithCurdCheese = new Dish();
     public static final Block TinyPotatoesWithCurdCheese = new Dish();
     public static final Block Schnitzel = new Dish();
+    public static final Block PizzaMargherita = new Pizza();
     public static final Block PizzaSalami = new Pizza();
     public static final Block PizzaHam = new Pizza();
     public static final Block PizzaTuna = new Pizza();
@@ -46,6 +46,7 @@ public class DishesMain implements ModInitializer {
     public static final Block Cheeseburger = new Dish();
     public static final Block Spaceburger = new Dish();
     public static final Block FishAndChips = new Dish();
+    public static final Block Borscht = new Soup();
     public static final Item Knife = new Item(new Item.Settings().group(DishesMain.MainGroup).recipeRemainder(DishesMain.Knife).maxCount(1));
     public static final Item PotatoSlice = new Item(new Item.Settings().group(DishesMain.MainGroup).food(new FoodComponent.Builder().hunger(1).saturationModifier(0.5f).snack().build()));
     public static final Item RawFries = new Item(new Item.Settings().group(DishesMain.MainGroup).food(new FoodComponent.Builder().hunger(2).saturationModifier(0.75f).snack().build()));
@@ -61,24 +62,22 @@ public class DishesMain implements ModInitializer {
     public static final Item CheeseRoll = new Item(new Item.Settings().group(DishesMain.MainGroup).food(new FoodComponent.Builder().hunger(4).saturationModifier(1f).build()));
     public static final Item CheeseSlice = new Item(new Item.Settings().group(DishesMain.MainGroup).food(new FoodComponent.Builder().hunger(2).saturationModifier(0.5f).snack().build()));
 
-    public static final Item IceCreamVanilla = new Item(new Item.Settings().group(DishesMain.SweetsGroup).food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build()));
-    public static final Item IceCreamChocolate = new Item(new Item.Settings().group(DishesMain.SweetsGroup).food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build()));
-    public static final Item IceCreamWhiteChocolate = new Item(new Item.Settings().group(DishesMain.SweetsGroup).food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build()));
-    public static final Item IceCreamStrawberry = new Item(new Item.Settings().group(DishesMain.SweetsGroup).food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build()));
-    public static final Item IceCreamBanana = new Item(new Item.Settings().group(DishesMain.SweetsGroup).food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build()));
-    public static final Item IceCreamPear = new Item(new Item.Settings().group(DishesMain.SweetsGroup).food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build()));
-    public static final Item IceCreamSweetberry = new Item(new Item.Settings().group(DishesMain.SweetsGroup).food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build()));
-    public static final Item IceCreamBlueberry = new Item(new Item.Settings().group(DishesMain.SweetsGroup).food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build()));
-    public static final Item IceCreamBubblegum = new Item(new Item.Settings().group(DishesMain.SweetsGroup).food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build()));
-    public static final Block BirthdayCake = new Cake();
+    public static final Item IceCreamVanilla = new IceCreamItem(new Item.Settings().group(DishesMain.SweetsGroup).food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build()));
+    public static final Item IceCreamChocolate = new IceCreamItem(new Item.Settings().group(DishesMain.SweetsGroup).food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build()));
+    public static final Item IceCreamWhiteChocolate = new IceCreamItem(new Item.Settings().group(DishesMain.SweetsGroup).food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build()));
+    public static final Item IceCreamStrawberry = new IceCreamItem(new Item.Settings().group(DishesMain.SweetsGroup).food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build()));
+    public static final Item IceCreamBanana = new IceCreamItem(new Item.Settings().group(DishesMain.SweetsGroup).food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build()));
+    public static final Item IceCreamPear = new IceCreamItem(new Item.Settings().group(DishesMain.SweetsGroup).food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build()));
+    public static final Item IceCreamSweetberry = new IceCreamItem(new Item.Settings().group(DishesMain.SweetsGroup).food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build()));
+    public static final Item IceCreamBlueberry = new IceCreamItem(new Item.Settings().group(DishesMain.SweetsGroup).food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build()));
+    public static final Item IceCreamBubblegum = new IceCreamItem(new Item.Settings().group(DishesMain.SweetsGroup).food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build()));
+    public static final Item IceCreamGlowberry = new IceCreamItem(new Item.Settings().group(DishesMain.SweetsGroup).food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build()));
 
     @Override
     public void onInitialize() {
-        AutoConfig.register(DishesConfig.class, JanksonConfigSerializer::new);
-        DD_CONFIG = AutoConfig.getConfigHolder(DishesConfig.class).getConfig();
+        DishesConfig.init("dishes", DishesConfig.class);
 
         new DishBites();
-        BlockEntityInit.init();
 
         // General //
         Registry.register(Registry.ITEM, new Identifier("dishes","salt_ore"), new BlockItem(SaltOre, new Item.Settings().group(DishesMain.MainGroup)));
@@ -99,47 +98,57 @@ public class DishesMain implements ModInitializer {
         CropInit.init();
 
         // Dishes //
-        Registry.register(Registry.ITEM, new Identifier("dishes","plate"), new BlockItem(Plate, new Item.Settings().group(DishesMain.DishesGroup)));
+        Registry.register(Registry.ITEM, new Identifier("dishes","plate"), new DishItem(Plate, new Item.Settings().group(DishesMain.DishesGroup)));
         Registry.register(Registry.BLOCK, new Identifier("dishes","plate"), Plate);
-        Registry.register(Registry.ITEM, new Identifier("dishes","potatoeswithcurdcheese"), new BlockItem(PotatoesWithCurdCheese, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
+        Registry.register(Registry.ITEM, new Identifier("dishes","bowl"), new DishItem(Bowl, new Item.Settings().group(DishesMain.DishesGroup)));
+        Registry.register(Registry.BLOCK, new Identifier("dishes","bowl"), Bowl);
+        Registry.register(Registry.ITEM, new Identifier("dishes","potatoeswithcurdcheese"), new DishItem(PotatoesWithCurdCheese, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
         Registry.register(Registry.BLOCK, new Identifier("dishes","potatoeswithcurdcheese"), PotatoesWithCurdCheese);
 
-        if (FabricLoader.getInstance().isModLoaded("lil_tater") | FabricLoader.getInstance().isModLoaded("liltater") | FabricLoader.getInstance().isModLoaded("ltr")) {
-            Registry.register(Registry.ITEM, new Identifier("dishes","tinypotatoeswithcurdcheese"), new BlockItem(TinyPotatoesWithCurdCheese, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
-            Registry.register(Registry.BLOCK, new Identifier("dishes","tinypotatoeswithcurdcheese"), TinyPotatoesWithCurdCheese);
-        }
+        if (FabricLoader.getInstance().isModLoaded("lil_tater") | FabricLoader.getInstance().isModLoaded("liltater") | FabricLoader.getInstance().isModLoaded("ltr"))
+            Registry.register(Registry.ITEM, new Identifier("dishes","tinypotatoeswithcurdcheese"), new DishItem(TinyPotatoesWithCurdCheese, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
+        else
+            Registry.register(Registry.ITEM, new Identifier("dishes","tinypotatoeswithcurdcheese"), new DishItem(TinyPotatoesWithCurdCheese, new Item.Settings().food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
 
-        Registry.register(Registry.ITEM, new Identifier("dishes","schnitzel"), new BlockItem(Schnitzel, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
+        Registry.register(Registry.BLOCK, new Identifier("dishes","tinypotatoeswithcurdcheese"), TinyPotatoesWithCurdCheese);
+
+        Registry.register(Registry.ITEM, new Identifier("dishes","schnitzel"), new DishItem(Schnitzel, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
         Registry.register(Registry.BLOCK, new Identifier("dishes","schnitzel"), Schnitzel);
-        Registry.register(Registry.ITEM, new Identifier("dishes","spaghetti_bolognese"), new BlockItem(SpaghettiBolognese, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
+        Registry.register(Registry.ITEM, new Identifier("dishes","spaghetti_bolognese"), new DishItem(SpaghettiBolognese, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
         Registry.register(Registry.BLOCK, new Identifier("dishes","spaghetti_bolognese"), SpaghettiBolognese);
-        Registry.register(Registry.ITEM, new Identifier("dishes","steak"), new BlockItem(Steak, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
+        Registry.register(Registry.ITEM, new Identifier("dishes","steak"), new DishItem(Steak, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
         Registry.register(Registry.BLOCK, new Identifier("dishes","steak"), Steak);
-        Registry.register(Registry.ITEM, new Identifier("dishes","hamburger"), new BlockItem(Hamburger, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
+        Registry.register(Registry.ITEM, new Identifier("dishes","hamburger"), new DishItem(Hamburger, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
         Registry.register(Registry.BLOCK, new Identifier("dishes","hamburger"), Hamburger);
-        Registry.register(Registry.ITEM, new Identifier("dishes","chickenburger"), new BlockItem(Chickenburger, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
+        Registry.register(Registry.ITEM, new Identifier("dishes","chickenburger"), new DishItem(Chickenburger, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
         Registry.register(Registry.BLOCK, new Identifier("dishes","chickenburger"), Chickenburger);
-        Registry.register(Registry.ITEM, new Identifier("dishes","cheeseburger"), new BlockItem(Cheeseburger, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
+        Registry.register(Registry.ITEM, new Identifier("dishes","cheeseburger"), new DishItem(Cheeseburger, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
         Registry.register(Registry.BLOCK, new Identifier("dishes","cheeseburger"), Cheeseburger);
 
-        if (FabricLoader.getInstance().isModLoaded("galacticraft-rewoven") | FabricLoader.getInstance().isModLoaded("astromine")) {
-            Registry.register(Registry.ITEM, new Identifier("dishes", "spaceburger"), new BlockItem(Spaceburger, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
-            Registry.register(Registry.BLOCK, new Identifier("dishes", "spaceburger"), Spaceburger);
-        }
+        if (FabricLoader.getInstance().isModLoaded("ad_astra"))
+            Registry.register(Registry.ITEM, new Identifier("dishes", "spaceburger"), new DishItem(Spaceburger, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
+        else
+            Registry.register(Registry.ITEM, new Identifier("dishes", "spaceburger"), new DishItem(Spaceburger, new Item.Settings().food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
 
-        Registry.register(Registry.ITEM, new Identifier("dishes","fishandchips"), new BlockItem(FishAndChips, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
+        Registry.register(Registry.BLOCK, new Identifier("dishes", "spaceburger"), Spaceburger);
+
+        Registry.register(Registry.ITEM, new Identifier("dishes","fishandchips"), new DishItem(FishAndChips, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
         Registry.register(Registry.BLOCK, new Identifier("dishes","fishandchips"), FishAndChips);
+        Registry.register(Registry.ITEM, new Identifier("dishes","borscht"), new DishItem(Borscht, new Item.Settings().group(DishesMain.DishesGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
+        Registry.register(Registry.BLOCK, new Identifier("dishes","borscht"), Borscht);
 
         // Pizza //
-        Registry.register(Registry.ITEM, new Identifier("dishes","pizzabox"), new BlockItem(PizzaBox, new Item.Settings().group(DishesMain.PizzaGroup)));
+        Registry.register(Registry.ITEM, new Identifier("dishes","pizzabox"), new DishItem(PizzaBox, new Item.Settings().group(DishesMain.PizzaGroup)));
         Registry.register(Registry.BLOCK, new Identifier("dishes","pizzabox"), PizzaBox);
-        Registry.register(Registry.ITEM, new Identifier("dishes","pizzasalami"), new BlockItem(PizzaSalami, new Item.Settings().group(DishesMain.PizzaGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
+        Registry.register(Registry.ITEM, new Identifier("dishes","pizzamargherita"), new DishItem(PizzaMargherita, new Item.Settings().group(DishesMain.PizzaGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
+        Registry.register(Registry.BLOCK, new Identifier("dishes","pizzamargherita"), PizzaMargherita);
+        Registry.register(Registry.ITEM, new Identifier("dishes","pizzasalami"), new DishItem(PizzaSalami, new Item.Settings().group(DishesMain.PizzaGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
         Registry.register(Registry.BLOCK, new Identifier("dishes","pizzasalami"), PizzaSalami);
-        Registry.register(Registry.ITEM, new Identifier("dishes","pizzaham"), new BlockItem(PizzaHam, new Item.Settings().group(DishesMain.PizzaGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
+        Registry.register(Registry.ITEM, new Identifier("dishes","pizzaham"), new DishItem(PizzaHam, new Item.Settings().group(DishesMain.PizzaGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
         Registry.register(Registry.BLOCK, new Identifier("dishes","pizzaham"), PizzaHam);
-        Registry.register(Registry.ITEM, new Identifier("dishes","pizzatuna"), new BlockItem(PizzaTuna, new Item.Settings().group(DishesMain.PizzaGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
+        Registry.register(Registry.ITEM, new Identifier("dishes","pizzatuna"), new DishItem(PizzaTuna, new Item.Settings().group(DishesMain.PizzaGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
         Registry.register(Registry.BLOCK, new Identifier("dishes","pizzatuna"), PizzaTuna);
-        Registry.register(Registry.ITEM, new Identifier("dishes","pizzabacon"), new BlockItem(PizzaBacon, new Item.Settings().group(DishesMain.PizzaGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
+        Registry.register(Registry.ITEM, new Identifier("dishes","pizzabacon"), new DishItem(PizzaBacon, new Item.Settings().group(DishesMain.PizzaGroup).food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())));
         Registry.register(Registry.BLOCK, new Identifier("dishes","pizzabacon"), PizzaBacon);
 
         // Ice Cream //
@@ -152,18 +161,14 @@ public class DishesMain implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier("dishes","ice_cream_sweetberry"), IceCreamSweetberry);
         Registry.register(Registry.ITEM, new Identifier("dishes","ice_cream_blueberry"), IceCreamBlueberry);
         Registry.register(Registry.ITEM, new Identifier("dishes","ice_cream_bubblegum"), IceCreamBubblegum);
+        Registry.register(Registry.ITEM, new Identifier("dishes","ice_cream_glowberry"), IceCreamGlowberry);
 
-        // Cake //
-        Registry.register(Registry.ITEM, new Identifier("dishes","birthday_cake"), new BlockItem(BirthdayCake, new Item.Settings().group(DishesMain.SweetsGroup)));
-        Registry.register(Registry.BLOCK, new Identifier("dishes","birthday_cake"), BirthdayCake);
-
+        Registry.register(Registry.ITEM, new Identifier("dishes","cooking_guide"), CookingGuide);
         // Compat //
-        if (FabricLoader.getInstance().isModLoaded("patchouli")) {
-            Registry.register(Registry.ITEM, new Identifier("dishes","cooking_guide"), CookingGuide);
-        }
         if (FabricLoader.getInstance().isModLoaded("patchouli")) {
             Flags.init();
         }
+        IceCreamTraderInit.init();
         WorldGenInit.init();
     }
 }

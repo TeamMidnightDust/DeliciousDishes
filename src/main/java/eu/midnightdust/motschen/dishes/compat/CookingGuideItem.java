@@ -20,7 +20,7 @@ public class CookingGuideItem extends Item {
 
         Optional<Item> item = Registry.ITEM.getOrEmpty(new Identifier("patchouli", "guide_book"));
         ItemStack stack = new ItemStack(item.get());
-        stack.getOrCreateTag().putString("patchouli:book", "dishes:cooking_guide");
+        stack.getOrCreateNbt().putString("patchouli:book", "dishes:cooking_guide");
 
         user.setStackInHand(hand, stack);
         return TypedActionResult.pass(itemStack);

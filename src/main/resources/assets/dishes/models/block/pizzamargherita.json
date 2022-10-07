@@ -1,0 +1,6 @@
+{
+	"parent": "dishes:block/pizzasalami",
+	"textures": {
+		"1": "dishes:block/pizza_margherita"
+	}
+}

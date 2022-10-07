@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Delicious Dishes",
-  "description": "Adds many cool new dishes with 3d models and animations!",
+  "description": "Adds many cool new dishes with 3D models and animations!",
   "authors": [
     "Motschen",
     "TeamMidnightDust"
@@ -24,22 +24,15 @@
     ],
     "client": [
       "eu.midnightdust.motschen.dishes.DishesClient"
-    ],
-    "modmenu": [
-      "eu.midnightdust.motschen.dishes.config.ModMenuIntegration"
     ]
   },
 
-  "mixins": [
-    "dishes.mixins.json"
-  ],
-
   "depends": {
-    "fabricloader": ">=0.7.2",
+    "midnightlib": "*",
     "fabric": "*"
   },
   "suggests": {
-    "simplystrawberrys": "*",
+    "decorative": "*",
     "patchouli": "*"
   }
 }

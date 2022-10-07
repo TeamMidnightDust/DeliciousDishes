@@ -1,0 +1,18 @@
+{
+  "name": "Schüssel",
+  "icon": "dishes:bowl",
+  "category": "dishes:general",
+  "pages": [
+	{
+      "type": "spotlight",
+      "item": "dishes:bowl",
+      "title": "Schüssel",
+      "link_recipe": false,
+      "text": "Eine Schüssel."
+    },
+	{
+      "type": "crafting",
+      "recipe": "dishes:bowl"
+    }
+  ]
+}
