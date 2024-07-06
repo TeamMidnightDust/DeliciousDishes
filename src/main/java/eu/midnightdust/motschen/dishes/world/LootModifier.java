@@ -14,46 +14,50 @@ import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 public class LootModifier {
     public static void init() {
         if (FabricLoader.getInstance().isModLoaded("ad_astra")) {
-            LootTableEvents.MODIFY.register((resourceManager, lootManager, id, supplier, setter) -> {
+            LootTableEvents.MODIFY.register((key, tableBuilder, source) -> {
+                var id = key.getValue();
                 if (id.getPath().contains("ad_astra") && id.getPath().contains("loot_tables") && id.getPath().contains("chests")) {
                     LootPool.Builder spaceburger = LootPool.builder()
                             .rolls(UniformLootNumberProvider.create(0, 2))
                             .conditionally(RandomChanceLootCondition.builder(0.5f).build())
                             .with(ItemEntry.builder(DishesMain.Spaceburger));
-                    supplier.pool(spaceburger);
+                    tableBuilder.pool(spaceburger);
                 }
             });
         }
         if (FabricLoader.getInstance().isModLoaded("patchouli")) {
-            LootTableEvents.MODIFY.register((resourceManager, lootManager, id, supplier, setter) -> {
+            LootTableEvents.MODIFY.register((key, tableBuilder, source) -> {
+                var id = key.getValue();
                 if (id.getPath().contains("chests") && id.getPath().contains("village")) {
                     LootPool.Builder patchouli = LootPool.builder()
                             .rolls(UniformLootNumberProvider.create(0, 1))
                             .conditionally(RandomChanceLootCondition.builder(0.5f).build())
                             .with(ItemEntry.builder(DishesMain.CookingGuide));
-                    supplier.pool(patchouli);
+                    tableBuilder.pool(patchouli);
                 }
             });
         }
         if (DishesConfig.tomatoes) {
-            LootTableEvents.MODIFY.register((resourceManager, lootManager, id, supplier, setter) -> {
+            LootTableEvents.MODIFY.register((key, tableBuilder, source) -> {
+                var id = key.getValue();
                 if (id.getPath().contains("chests") && id.getPath().contains("village")) {
                     LootPool.Builder tomato = LootPool.builder()
                             .rolls(UniformLootNumberProvider.create(0, 5))
                             .conditionally(RandomChanceLootCondition.builder(0.5f).build())
                             .with(ItemEntry.builder(TomatoInit.Tomato));
-                    supplier.pool(tomato);
+                    tableBuilder.pool(tomato);
                 }
             });
         }
         if (DishesConfig.lettuce) {
-            LootTableEvents.MODIFY.register((resourceManager, lootManager, id, supplier, setter) -> {
+            LootTableEvents.MODIFY.register((key, tableBuilder, source) -> {
+                var id = key.getValue();
                 if (id.getPath().contains("chests") && id.getPath().contains("village")) {
                     LootPool.Builder lettuce = LootPool.builder()
                             .rolls(UniformLootNumberProvider.create(0, 5))
                             .conditionally(RandomChanceLootCondition.builder(0.5f).build())
                             .with(ItemEntry.builder(LettuceInit.Lettuce));
-                    supplier.pool(lettuce);
+                    tableBuilder.pool(lettuce);
                 }
             });
         }

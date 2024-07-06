@@ -1,20 +1,20 @@
 package eu.midnightdust.motschen.dishes.entities;
 
 import eu.midnightdust.motschen.dishes.init.IceCreamTraderInit;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.SpawnRestriction;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.*;
+import net.minecraft.util.math.random.Random;
+import net.minecraft.world.GameRules;
+import net.minecraft.world.Heightmap;
 import net.minecraft.world.level.ServerWorldProperties;
 import net.minecraft.world.poi.PointOfInterestStorage;
 
 import java.util.Iterator;
 import java.util.Optional;
-import java.util.Random;
 
 public class IceCreamTraderSpawn {
     public static void tick(ServerWorld serverWorld) {
@@ -48,15 +48,15 @@ public class IceCreamTraderSpawn {
         }
     }
 
-    private static BlockPos getLlamaSpawnPosition(WorldView worldView, BlockPos blockPos, int i) {
-        Random random = new Random();
+    private static BlockPos getLlamaSpawnPosition(ServerWorld worldView, BlockPos blockPos, int i) {
+        Random random = worldView.random;
         BlockPos blockPos2 = null;
         for (int j = 0; j < 10; ++j) {
             int k = blockPos.getX() + random.nextInt(i * 2) - i;
             int l = blockPos.getZ() + random.nextInt(i * 2) - i;
             int m = worldView.getTopY(Heightmap.Type.WORLD_SURFACE, k, l);
             BlockPos blockPos3 = new BlockPos(k, m, l);
-            if (SpawnHelper.canSpawn(SpawnRestriction.Location.ON_GROUND, worldView, blockPos3, EntityType.WANDERING_TRADER)) {
+            if (SpawnRestriction.canSpawn(IceCreamTraderInit.ICE_CREAM_TRADER, worldView, SpawnReason.EVENT, blockPos3, random)) {
                 blockPos2 = blockPos3;
                 break;
             }
@@ -65,7 +65,7 @@ public class IceCreamTraderSpawn {
     }
 
 
-    private static boolean wontSuffocateAt(BlockView blockView, BlockPos blockPos) {
+    private static boolean wontSuffocateAt(ServerWorld blockView, BlockPos blockPos) {
         Iterator<BlockPos> var3 = BlockPos.iterate(blockPos, blockPos.add(1, 2, 1)).iterator();
         BlockPos blockPos2;
         do {

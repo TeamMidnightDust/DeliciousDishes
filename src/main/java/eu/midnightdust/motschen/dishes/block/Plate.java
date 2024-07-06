@@ -16,7 +16,7 @@ public class Plate extends HorizontalFacingBlock {
 
     private static final VoxelShape SHAPE;
     public Plate() {
-        super(FabricBlockSettings.copyOf(Blocks.STONE).nonOpaque().sounds(BlockSoundGroup.STONE));
+        super(AbstractBlock.Settings.copy(Blocks.STONE).nonOpaque().sounds(BlockSoundGroup.STONE));
         this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH));
     }
 

@@ -2,9 +2,8 @@ package eu.midnightdust.motschen.dishes.compat;
 
 import eu.midnightdust.motschen.dishes.utils.DishGroup;
 import net.minecraft.item.Item;
-import net.minecraft.util.Identifier;
 
-import static eu.midnightdust.motschen.dishes.DishesMain.MOD_ID;
+import static eu.midnightdust.motschen.dishes.DishesMain.id;
 import static eu.midnightdust.motschen.dishes.utils.RegistryUtils.registerItem;
 
 public class Flags {
@@ -16,12 +15,12 @@ public class Flags {
     public static Item LabelVeggie = new Item(new Item.Settings());
     public static Item LabelVegan = new Item(new Item.Settings());
     public static void init() {
-        registerItem(new Identifier(MOD_ID,"flag_germany"), FlagGermany, DishGroup.NONE);
-        registerItem(new Identifier(MOD_ID,"flag_italy"), FlagItaly, DishGroup.NONE);
-        registerItem(new Identifier(MOD_ID,"flag_uk"), FlagUK, DishGroup.NONE);
-        registerItem(new Identifier(MOD_ID,"flag_ukraine"), FlagUkraine, DishGroup.NONE);
-        registerItem(new Identifier(MOD_ID,"flag_usa"), FlagUSA, DishGroup.NONE);
-        registerItem(new Identifier(MOD_ID,"label_veggie"), LabelVeggie, DishGroup.NONE);
-        registerItem(new Identifier(MOD_ID,"label_vegan"), LabelVegan, DishGroup.NONE);
+        registerItem(id("flag_germany"), FlagGermany, DishGroup.NONE);
+        registerItem(id("flag_italy"), FlagItaly, DishGroup.NONE);
+        registerItem(id("flag_uk"), FlagUK, DishGroup.NONE);
+        registerItem(id("flag_ukraine"), FlagUkraine, DishGroup.NONE);
+        registerItem(id("flag_usa"), FlagUSA, DishGroup.NONE);
+        registerItem(id("label_veggie"), LabelVeggie, DishGroup.NONE);
+        registerItem(id("label_vegan"), LabelVegan, DishGroup.NONE);
     }
 }

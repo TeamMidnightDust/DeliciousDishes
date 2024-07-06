@@ -1,6 +1,7 @@
 package eu.midnightdust.motschen.dishes.item;
 
 import eu.midnightdust.motschen.dishes.DishesMain;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -15,7 +16,7 @@ public class IceCreamItem extends Item {
 
     @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
-        if (stack.getItem() == DishesMain.IceCreamGlowberry && this.getFoodComponent() != null)
+        if (stack.getItem() == DishesMain.IceCreamGlowberry && this.getComponents().contains(DataComponentTypes.FOOD))
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 100, 1));
         return super.finishUsing(stack, world, user);
     }

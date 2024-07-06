@@ -1,5 +1,6 @@
 package eu.midnightdust.motschen.dishes.compat;
 
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -18,9 +19,9 @@ public class CookingGuideItem extends Item {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
 
-        Optional<Item> item = Registries.ITEM.getOrEmpty(new Identifier("patchouli", "guide_book"));
+        Optional<Item> item = Registries.ITEM.getOrEmpty(Identifier.of("patchouli", "guide_book"));
         ItemStack stack = new ItemStack(item.get());
-        stack.getOrCreateNbt().putString("patchouli:book", "dishes:cooking_guide");
+        stack.getComponents().get(DataComponentTypes.CUSTOM_DATA).copyNbt().putString("patchouli:book", "dishes:cooking_guide");
 
         user.setStackInHand(hand, stack);
         return TypedActionResult.pass(itemStack);

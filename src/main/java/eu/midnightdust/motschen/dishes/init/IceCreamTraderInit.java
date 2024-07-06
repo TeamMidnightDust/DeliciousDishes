@@ -13,17 +13,16 @@ import net.minecraft.item.Item;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
 
-import static eu.midnightdust.motschen.dishes.DishesMain.MOD_ID;
+import static eu.midnightdust.motschen.dishes.DishesMain.id;
 import static eu.midnightdust.motschen.dishes.utils.RegistryUtils.registerItem;
 
 public class IceCreamTraderInit {
     public static final EntityType<IceCreamTraderEntity> ICE_CREAM_TRADER =
-            Registry.register(Registries.ENTITY_TYPE,new Identifier(MOD_ID,"ice_cream_trader"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, IceCreamTraderEntity::new).dimensions(EntityDimensions.fixed(1f,2f)).trackRangeBlocks(100).trackedUpdateRate(4).build());
+            Registry.register(Registries.ENTITY_TYPE, id("ice_cream_trader"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, IceCreamTraderEntity::new).dimensions(EntityDimensions.fixed(1f,2f)).trackRangeBlocks(100).trackedUpdateRate(4).build());
 
     public static void init() {
-        registerItem(new Identifier(MOD_ID,"ice_cream_trader_spawn_egg"), new SpawnEggItem(ICE_CREAM_TRADER,5349438,15377456, new Item.Settings()), DishGroup.MAIN);
+        registerItem(id("ice_cream_trader_spawn_egg"), new SpawnEggItem(ICE_CREAM_TRADER,5349438,15377456, new Item.Settings()), DishGroup.MAIN);
         FabricDefaultAttributeRegistry.register(ICE_CREAM_TRADER, MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0D));
     }
 }

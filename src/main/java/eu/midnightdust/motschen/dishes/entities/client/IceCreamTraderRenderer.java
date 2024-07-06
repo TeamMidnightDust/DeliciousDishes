@@ -9,6 +9,8 @@ import net.minecraft.client.render.entity.model.EntityModelLayers;
 import net.minecraft.client.render.entity.model.VillagerResemblingModel;
 import net.minecraft.util.Identifier;
 
+import static eu.midnightdust.motschen.dishes.DishesMain.id;
+
 @Environment(EnvType.CLIENT)
 public class IceCreamTraderRenderer extends MobEntityRenderer<IceCreamTraderEntity, VillagerResemblingModel<IceCreamTraderEntity>> {
 
@@ -18,6 +20,6 @@ public class IceCreamTraderRenderer extends MobEntityRenderer<IceCreamTraderEnti
 
     @Override
     public Identifier getTexture(IceCreamTraderEntity entity) {
-        return new Identifier("dishes", "textures/entity/ice_cream_seller.png");
+        return id("textures/entity/ice_cream_seller.png");
     }
 }

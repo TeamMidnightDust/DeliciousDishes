@@ -26,7 +26,7 @@ public class Pizza extends HorizontalFacingBlock {
     private static final VoxelShape SHAPE;
 
     public Pizza() {
-        super(FabricBlockSettings.copyOf(Blocks.STONE).nonOpaque().sounds(BlockSoundGroup.STONE));
+        super(AbstractBlock.Settings.copy(Blocks.STONE).nonOpaque().sounds(BlockSoundGroup.STONE));
         this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(DISH_BITES, 0));
     }
 

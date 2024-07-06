@@ -3,7 +3,6 @@ package eu.midnightdust.motschen.dishes.block;
 import com.mojang.serialization.MapCodec;
 import eu.midnightdust.motschen.dishes.DishesMain;
 import eu.midnightdust.motschen.dishes.blockstates.SoupSips;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
@@ -26,7 +25,7 @@ public class Soup extends HorizontalFacingBlock {
     private static final VoxelShape SHAPE;
 
     public Soup() {
-        super(FabricBlockSettings.copyOf(Blocks.STONE).nonOpaque().sounds(BlockSoundGroup.STONE));
+        super(AbstractBlock.Settings.copy(Blocks.STONE).nonOpaque().sounds(BlockSoundGroup.STONE));
         this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(SOUP_SIPS, 0));
     }
 
