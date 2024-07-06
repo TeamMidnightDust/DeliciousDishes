@@ -1,0 +1,24 @@
+{
+    "variants": {
+        "facing=north,bites=0": { "model": "dishes:block/potatoburger" },
+		"facing=east,bites=0": { "model": "dishes:block/potatoburger", "y": 90 },
+		"facing=south,bites=0": { "model": "dishes:block/potatoburger", "y": 180 },
+		"facing=west,bites=0": { "model": "dishes:block/potatoburger", "y": 270 },
+		"facing=north,bites=1": { "model": "dishes:block/potatoburger1" },
+		"facing=east,bites=1": { "model": "dishes:block/potatoburger1", "y": 90 },
+		"facing=south,bites=1": { "model": "dishes:block/potatoburger1", "y": 180 },
+		"facing=west,bites=1": { "model": "dishes:block/potatoburger1", "y": 270 },
+		"facing=north,bites=2": { "model": "dishes:block/potatoburger2" },
+		"facing=east,bites=2": { "model": "dishes:block/potatoburger2", "y": 90 },
+		"facing=south,bites=2": { "model": "dishes:block/potatoburger2", "y": 180 },
+		"facing=west,bites=2": { "model": "dishes:block/potatoburger2", "y": 270 },
+		"facing=north,bites=3": { "model": "dishes:block/potatoburger3" },
+		"facing=east,bites=3": { "model": "dishes:block/potatoburger3", "y": 90 },
+		"facing=south,bites=3": { "model": "dishes:block/potatoburger3", "y": 180 },
+		"facing=west,bites=3": { "model": "dishes:block/potatoburger3", "y": 270 },
+		"facing=north,bites=4": { "model": "dishes:block/potatoburger4" },
+		"facing=east,bites=4": { "model": "dishes:block/potatoburger4", "y": 90 },
+		"facing=south,bites=4": { "model": "dishes:block/potatoburger4", "y": 180 },
+		"facing=west,bites=4": { "model": "dishes:block/potatoburger4", "y": 270 }
+    }
+}

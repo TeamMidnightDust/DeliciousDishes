@@ -1,5 +1,6 @@
 package eu.midnightdust.motschen.dishes.block;
 
+import com.mojang.serialization.MapCodec;
 import eu.midnightdust.motschen.dishes.DishesMain;
 import eu.midnightdust.motschen.dishes.blockstates.DishBites;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -25,7 +26,7 @@ public class Pizza extends HorizontalFacingBlock {
     private static final VoxelShape SHAPE;
 
     public Pizza() {
-        super(FabricBlockSettings.of(Material.STONE).nonOpaque().sounds(BlockSoundGroup.STONE));
+        super(FabricBlockSettings.copyOf(Blocks.STONE).nonOpaque().sounds(BlockSoundGroup.STONE));
         this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(DISH_BITES, 0));
     }
 
@@ -48,7 +49,7 @@ public class Pizza extends HorizontalFacingBlock {
     @Override
     public BlockState getPlacementState(ItemPlacementContext itemPlacementContext) {
         return super.getPlacementState(itemPlacementContext)
-                .with(FACING, itemPlacementContext.getPlayerFacing().getOpposite())
+                .with(FACING, itemPlacementContext.getHorizontalPlayerFacing().getOpposite())
                 .with(DISH_BITES, 0);
     }
 
@@ -70,4 +71,8 @@ public class Pizza extends HorizontalFacingBlock {
         return !worldView.isAir(pos.down());
     }
 
+    @Override
+    protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
+        return null;
+    }
 }

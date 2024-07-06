@@ -5,9 +5,9 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.SpawnRestriction;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.*;
 import net.minecraft.world.level.ServerWorldProperties;
 import net.minecraft.world.poi.PointOfInterestStorage;
@@ -37,7 +37,7 @@ public class IceCreamTraderSpawn {
             BlockPos blockPos2 = optional.orElse(blockPos);
             BlockPos blockPos3 = getLlamaSpawnPosition(serverWorld, blockPos2, 48);
             if (blockPos3 != null && wontSuffocateAt(serverWorld, blockPos3)) {
-                IceCreamTraderEntity traderEntity = IceCreamTraderInit.ICE_CREAM_TRADER.spawn(serverWorld, null,null,null, blockPos3, SpawnReason.EVENT, false, false);
+                IceCreamTraderEntity traderEntity = IceCreamTraderInit.ICE_CREAM_TRADER.spawn(serverWorld, blockPos3, SpawnReason.EVENT);
                 if (traderEntity != null) {
                     serverWorldProperties.setWanderingTraderId(traderEntity.getUuid());
                     traderEntity.setDespawnDelay(32000);

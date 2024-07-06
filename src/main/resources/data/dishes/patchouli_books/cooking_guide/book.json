@@ -1,8 +1,0 @@
-{
-  "name": "book.dishes.cooking_guide",
-  "landing_text": "text.dishes.landing_text",
-  "version": 1,
-  "book_texture": "patchouli:textures/gui/book_gray.png",
-  "model": "patchouli:book_gray",
-  "creative_tab": "dishes.main"
-}

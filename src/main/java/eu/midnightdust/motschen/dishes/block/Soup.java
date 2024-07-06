@@ -1,5 +1,6 @@
 package eu.midnightdust.motschen.dishes.block;
 
+import com.mojang.serialization.MapCodec;
 import eu.midnightdust.motschen.dishes.DishesMain;
 import eu.midnightdust.motschen.dishes.blockstates.SoupSips;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -25,7 +26,7 @@ public class Soup extends HorizontalFacingBlock {
     private static final VoxelShape SHAPE;
 
     public Soup() {
-        super(FabricBlockSettings.of(Material.STONE).nonOpaque().sounds(BlockSoundGroup.STONE));
+        super(FabricBlockSettings.copyOf(Blocks.STONE).nonOpaque().sounds(BlockSoundGroup.STONE));
         this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(SOUP_SIPS, 0));
     }
 
@@ -48,7 +49,7 @@ public class Soup extends HorizontalFacingBlock {
     @Override
     public BlockState getPlacementState(ItemPlacementContext itemPlacementContext) {
         return super.getPlacementState(itemPlacementContext)
-                .with(FACING, itemPlacementContext.getPlayerFacing().getOpposite())
+                .with(FACING, itemPlacementContext.getHorizontalPlayerFacing().getOpposite())
                 .with(SOUP_SIPS, 0);
     }
 
@@ -67,4 +68,8 @@ public class Soup extends HorizontalFacingBlock {
         return !worldView.isAir(pos.down());
     }
 
+    @Override
+    protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
+        return null;
+    }
 }

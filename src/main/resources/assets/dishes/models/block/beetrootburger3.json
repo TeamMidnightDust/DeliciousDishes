@@ -1,0 +1,7 @@
+{
+	"credit": "made by Motschen",
+	"parent": "dishes:block/hamburger3",
+	"textures": {
+		"2": "item/beetroot"
+	}
+}

@@ -1,0 +1,5 @@
+{
+  "texture": "patchouli:textures/gui/book_gray.png",
+  "dynamic_book_model": "patchouli:book_gray",
+  "display_completion": true
+}
